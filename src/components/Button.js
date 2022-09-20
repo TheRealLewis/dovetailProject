@@ -1,10 +1,15 @@
 import React from 'react';
 import './Button.css';
-import { Link } from 'react-router-dom';
+import { Link, useHref } from 'react-router-dom';
+import Footer from './Footer';
 
 const STYLES = ['btn--primary', 'btn--outline']
 
 const SIZES = ['btn--medium', 'btn--large'];
+
+const scrollHeight = document.body.scrollHeight;
+
+
 
 export const Button = ({
     children, 
@@ -18,8 +23,8 @@ export const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return (
-        <Link to='/contact-us' className='btn-mobile'>
-            <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
+        <Link to='' className='btn-mobile'>
+            <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={()=> window.scrollTo(0, scrollHeight)} type={type}>
                 {children}
             </button>
         </Link>

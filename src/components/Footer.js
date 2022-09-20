@@ -8,23 +8,28 @@ const inputBox = {
     height: '250px'
 }
 
+const linkStyle = {
+    'text-decoration' : 'none',
+    'color': '#fff'
+}
+
 
 function Footer() {
   return (
-    <div className='footer-container'>
+    <div className='footer-container' id='footer-container'>
         <section className='footer-subscription'>
-            <p className='footer-subscription-heading'>
-                base form to go here
-            </p>
+            <h2 className='footer-subscription-heading'>
+                Request a quote below
+            </h2>
             <p className='footer-subscription-text'>
-                you can unsub at anytime
+                we will get back to you
             </p>
             <div className='input-areas'>
                 <form className='footer-container'>
                     <input className='footer-input' type='email' name='email' placeholder='Your Email'/>
                     <input className='footer-input' type='text' name='name' placeholder='Your Name'/>
                     <textarea className='footer-input' type='text-box' name='quote' placeholder='What kind of work do you need done?' style={inputBox}/>
-                    <Button buttonStyle='btn--outline'>Send</Button>
+                    <Button buttonStyle='btn--outline' onClick={() => window.location = 'mailto:kirk@dovetailcontracting.com'}>Send</Button>
                 </form>
             </div>
             <div className='footer-links'>
@@ -37,30 +42,15 @@ function Footer() {
                                 </Link>
                             </div>
                             <div class='social-icons'>
-                                <Link
-                                    class='social-icon-link facebook'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Facebook'
-                                >
-                                    <i class='fab fa-facebook-f' />
-                                </Link>
-                                <Link
-                                    class='social-icon-link instagram'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Instagram'
-                                    >
-                                        <i class='fab fa-instagram' />
-                                </Link>
-                                <Link
-                                    class='social-icon-link twitter'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Twitter'
-                                    >
-                                        <i class='fab fa-twitter' />
-                                </Link>
+                                    <a href='https://facebook.com/dovetailcontracting' target='_blank' style={linkStyle}>
+                                        <i class='fab fa-3x fa-facebook-f' />
+                                    </a>
+                                    <a href='https://instagram.com/dovetailcontracting' target='_blank' style={linkStyle}>
+                                        <i class='fab fa-3x fa-instagram' />
+                                    </a>
+                                    <a href='https://twitter.com/dovetailcontracting' target='_blank' style={linkStyle}>
+                                        <i class='fab fa-3x fa-twitter' />
+                                    </a>
 
                             </div>
                         </div>
